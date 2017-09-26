@@ -1,0 +1,1 @@
+let BeaconLambdaFunction = require('../obj/src/container/BeaconsLambdaFunctions')
