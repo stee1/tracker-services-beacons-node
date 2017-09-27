@@ -53,10 +53,13 @@ suite('BeaconsLambdaFunction', () => {
                 lambda.act({
                     role: 'beacons',
                     cmd: 'calculate_position',
-                    beacon: BEACON1
-                }, (err, beacon) => {
+                    site_id: "1",
+                    udis: ["000001"]
+                }, (err, position) => {
                     assert.isNull(err);
-                    // assert.equal(beacon.center, BEACON1.center);
+                    assert.equal(position.type, "Point");
+                    /* assert.equal(position.coordinates[0], 0);
+                     assert.equal(position.coordinates[1], 0);*/
                     callback();
                 });
             },
