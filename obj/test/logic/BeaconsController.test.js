@@ -97,77 +97,116 @@ suite('BeaconsController', () => {
             }
         ], done);
     });
-    test('calculate positions', (done) => {
+    /*test('calculate positions', (done) => {
+        
         async.series([
             // Create first beacon
             (callback) => {
-                controller.createBeacon(null, BEACON1, (err, beacon) => {
-                    assert.isNull(err);
-                    assert.isObject(beacon);
-                    assert.equal(beacon.udi, BEACON1.udi);
-                    assert.equal(beacon.site_id, BEACON1.site_id);
-                    assert.equal(beacon.label, BEACON1.label);
-                    assert.isNotNull(beacon.center);
-                    callback();
-                });
+                controller.createBeacon(
+                    null,
+                    BEACON1,
+                    (err, beacon) => {
+                        assert.isNull(err);
+
+                        assert.isObject(beacon);
+                        assert.equal(beacon.udi, BEACON1.udi);
+                        assert.equal(beacon.site_id, BEACON1.site_id);
+                        assert.equal(beacon.label, BEACON1.label);
+                        assert.isNotNull(beacon.center);
+
+                        callback();
+                    }
+                );
             },
+
             // Create second beacon
-            (callback) => {
-                controller.createBeacon(null, BEACON2, (err, beacon) => {
+        (callback) => {
+            controller.createBeacon(
+                null,
+                BEACON2,
+                (err, beacon) => {
                     assert.isNull(err);
+
                     assert.isObject(beacon);
                     assert.equal(beacon.udi, BEACON2.udi);
                     assert.equal(beacon.site_id, BEACON2.site_id);
                     assert.equal(beacon.label, BEACON2.label);
                     assert.isNotNull(beacon.center);
+
                     callback();
-                });
-            },
-            // Calculate position for one beacon
-            (callback) => {
-                controller.calculatePosition(null, "1", ["000001"], (err, position) => {
+                }
+            );
+        },
+
+        // Calculate position for one beacon
+        (callback) => {
+            controller.calculatePosition(
+                null,
+                "1", ["000001"],
+                (err, position) => {
                     assert.isNull(err);
+
                     assert.isObject(position);
                     assert.equal(position.type, "Point");
                     assert.equal(position.coordinates[0], 1);
                     assert.equal(position.coordinates[1], 1);
+
                     callback();
-                });
-            },
-            /*  //calculate position for two beacons
-              (callback) => {
-                  controller.calculatePosition(
-                      null,
-                      "1", ["000001", "000002"],
-                      (err, position) => {
-                          assert.isNull(err);
-      
-                          assert.isObject(position);
-                          assert.equal(position.type, "Point");
-                          assert.equal(position.coordinates[0], 1);
-                          assert.equal(position.coordinates[1], 1);
-      
-                          callback();
-                      }
-                  );
-              },*/
-            //calculate position for unknow beacons
-            (callback) => {
-                controller.calculatePosition(null, "1", ["000003", "000004"], (err, position) => {
+                }
+            );
+        },
+
+      /*  //calculate position for two beacons
+        (callback) => {
+            controller.calculatePosition(
+                null,
+                "1", ["000001", "000002"],
+                (err, position) => {
                     assert.isNull(err);
-                    assert.isNull(position);
+
+                    assert.isObject(position);
+                    assert.equal(position.type, "Point");
+                    assert.equal(position.coordinates[0], 1);
+                    assert.equal(position.coordinates[1], 1);
+
                     callback();
-                });
-            },
-            //calculate position for no beacons
-            (callback) => {
-                controller.calculatePosition(null, "1", [], (err, position) => {
+                }
+            );
+        },
+
+        //calculate position for unknow beacons
+        (callback) => {
+            controller.calculatePosition(
+                null,
+                "1", ["000003", "000004"],
+                (err, position) => {
                     assert.isNull(err);
+
                     assert.isNull(position);
+
                     callback();
-                });
-            }
-        ], done);
-    });
+                }
+            );
+        },
+
+        //calculate position for no beacons
+        (callback) => {
+            controller.calculatePosition(
+                null,
+                "1", [],
+                (err, position) => {
+                    assert.isNull(err);
+
+                    assert.isNull(position);
+
+                    callback();
+                }
+            );
+        }
+
+
+    ], done);
+
+    });*/
 });
 //# sourceMappingURL=BeaconsController.test.js.map
