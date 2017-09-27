@@ -22,4 +22,5 @@ export class BeaconsServiceFactory extends Factory{
         this.registerAsType(BeaconsServiceFactory.ControllerDescriptor, BeaconsController);
         this.registerAsType(BeaconsServiceFactory.HttpServiceDescriptor, BeaconsHttpServiceV1);
     }
+     
 }

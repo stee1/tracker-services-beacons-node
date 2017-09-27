@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "test": "mocha -t 5000 -R spec -u tdd --recursive ./obj/test"
+    "test": "mocha -t 5000 -R spec -u tdd --recursive ./obj/test",
+    "test-tc": "mocha -t 5000 -R mocha-teamcity-reporter -u tdd --recursive ./obj/test"
   },
   "keywords": [
     "iquipsys",
@@ -32,6 +33,7 @@
     "@types/mocha": "*",
     "chai": "*",
     "mocha": "*",
+    "mocha-teamcity-reporter": "^1.1.1",
     "restify": "^4.3.0"
   }
 }

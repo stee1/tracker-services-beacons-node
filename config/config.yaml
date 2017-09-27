@@ -10,20 +10,14 @@
 # In-memory persistence
 #-descriptor: "tracker-services-beacons:persistence:memory:default:1.0"
 
-# File persistence
-- descriptor: "tracker-services-beacons:persistence:file:default:1.0"
-  path: "./data/beacons.json"
-
 # MongoDb persistence
-#- descriptor: "tracker-services-beacons:persistence:mongodb:default:1.0"
-  # collection: beacons
-  # connection:
-  #   host: localhost
-  #   port: 27017
-  #   database: test
-  # credential:
-  #   username: test
-  #   password: pwd123
+- descriptor: "tracker-services-beacons:persistence:mongodb:default:1.0"
+  collection: beacons
+  connection:
+    uri: {{ MONGO_URI }}
+    host: {{ MONGO_HOST }}
+    port: {{ MONGO_PORT }}
+    database: {{ MONGO_DB }}
 
 # Comtroller persistence
 - descriptor: "tracker-services-beacons:controller:default:default:1.0"
