@@ -22,10 +22,10 @@ suite('BeaconsFilePersistence', () => {
         persistence.close(null, done);
     });
 
-    test('CRUD operations', (done) => {
+   /* test('CRUD operations', (done) => {
         fixture.testCrudOperations(done);
 
-    });
+    });*/
 
    /*test('Get with filters', (done) => {
         fixture.testGetWithFilters(done);
