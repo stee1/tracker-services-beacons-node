@@ -90,7 +90,7 @@ suite('BeaconsLambdaFunction', () => {
 
                     callback();
                 })
-            },
+            }
          ], done);
         });
 

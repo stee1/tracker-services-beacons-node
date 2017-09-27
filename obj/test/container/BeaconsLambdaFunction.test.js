@@ -56,13 +56,13 @@ suite('BeaconsLambdaFunction', () => {
                     site_id: "1",
                     udis: ["000001"]
                 }, (err, position) => {
-                    assert.isNull(err);
+                    assert.isNull(err || null);
                     assert.equal(position.type, "Point");
                     /* assert.equal(position.coordinates[0], 0);
                      assert.equal(position.coordinates[1], 0);*/
                     callback();
                 });
-            },
+            }
         ], done);
     });
     /*
