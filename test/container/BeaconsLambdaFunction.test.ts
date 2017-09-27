@@ -82,7 +82,7 @@ suite('BeaconsLambdaFunction', () => {
                         udis: ["000001"]
                     },
                     (err, position) => {
-                    assert.isNull(err);
+                    assert.isNull(err || null);
 
                     assert.equal(position.type, "Point");
                    /* assert.equal(position.coordinates[0], 0);
