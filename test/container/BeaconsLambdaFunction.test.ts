@@ -80,11 +80,12 @@ suite('BeaconsLambdaFunction', () => {
                         cmd: 'calculate_position',
                         beacon: BEACON1
                     },
-                    (err, beacon) => {
+                    (err, position) => {
                     assert.isNull(err);
 
-                 
-                    // assert.equal(beacon.center, BEACON1.center);
+                    assert.equal(position.type, "Point");
+                    assert.equal(position.coordinates[0], 1);
+                    assert.equal(position.coordinates[1], 1);
 
                     callback();
                 })
