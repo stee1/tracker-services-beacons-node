@@ -14,10 +14,10 @@
 - descriptor: "tracker-services-beacons:persistence:mongodb:default:1.0"
   collection: beacons
   connection:
-    uri: {{ MONGO_URI }}
-    host: {{ MONGO_HOST }}
-    port: {{ MONGO_PORT }}
-    database: {{ MONGO_DB }}
+    uri: {{ MONGO_SERVICE_URI }}
+    host: {{ MONGO_SERVICE_HOST }}
+    port: {{ MONGO_SERVICE_PORT }}
+    database: {{ MONGO_SERVICE_DB }}
 
 # Comtroller persistence
 - descriptor: "tracker-services-beacons:controller:default:default:1.0"

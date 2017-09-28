@@ -27,7 +27,7 @@ suite('BeaconsFilePersistence', () => {
 
     });
 
-   test('Get with filters', (done) => {
+  /* test('Get with filters', (done) => {
         fixture.testGetWithFilters(done);
-    });
+    });*/
 });
